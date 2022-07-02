@@ -1,10 +1,11 @@
 import React from 'react'
+import LoginCard from './components/logincard/LoginCard'
 
 export default function LoginPage() {
     
   return (
-    <div>
-        <h1>Login page content will be here in the  near future.</h1>
+    <div className='flex flex-col items-center'>
+        <LoginCard/>
     </div>
   )
 }
