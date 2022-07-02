@@ -3,13 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from 'react-router-dom';
-
+import {BrowserRouter} from 'react-router-dom'
+import { BalanceProvider } from './components/context/BalanceContext';
+import { MonthStateProvider } from './components/context/monthContext';
+import YearStateProvider from './components/context/yearContext';
+import { MonthDataProvider } from './components/context/monthData';
+import { SheetDataProvider } from './components/context/sheetData';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <BalanceProvider>
+    <MonthStateProvider>
+      <YearStateProvider>
+        <MonthDataProvider>
+          <SheetDataProvider>
+            
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+ 
+          </SheetDataProvider>
+        </MonthDataProvider>
+      </YearStateProvider>
+    </MonthStateProvider>
+  </BalanceProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
