@@ -23,10 +23,12 @@ export default function GoogleLoginButton () {
     <div className=''>
         <GoogleLogin
             clientId={clientId}
-            buttonText="Login with Google"
             onSuccess={onSuccess}
             onFailure={onFailure}
             cookiePolicy={'single_host_origin'}
+            render={renderProps => (
+                <button onClick={renderProps.onClick} className= ' bg-my_blue001021 font-bold text-white p-3 rounded-lg'>Done</button>
+              )}
         />
     </div>
   )
