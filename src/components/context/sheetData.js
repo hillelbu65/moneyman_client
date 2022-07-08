@@ -4,11 +4,7 @@ export const SheetDataContext = createContext()
 
 export const SheetDataProvider = (props) => 
 {
-    const [sheetDataContext, setSheetDataContext] = useState(
-        {
-         workSheetId:'1oHvBvgpsMOUHSDVUocOtGLjJyRj6p6H_krfkSX2UgUs', 
-         sheetName:'test'    
-        })
+    const [sheetDataContext, setSheetDataContext] = useState({})
 
     return ( 
         <SheetDataContext.Provider value = {[sheetDataContext, setSheetDataContext]}>
