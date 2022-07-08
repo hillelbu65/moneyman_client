@@ -60,16 +60,29 @@ const sortToCategories = (array) => {
 
   export const getMonth  = async (file_id, sheet_name, month, year) => {
     const response = await pullFileData(file_id, sheet_name);
+    const myRange = response.map((line) => line[3][6] + line[3][7] + line[3][8] + line[3][9]);
+    const sortDuplicatesAndUnvalidDates = (arrayOfDates) => {
+      const resolt = [];
+      arrayOfDates.map((date) => {
+        if(resolt.find((el) => el === date) === undefined && date.length === 4 ) {
+          resolt.push(date)
+        }
+      })
+      return resolt;
+    }
+
     const myMonth = response.filter((row) => {
          if (
          row[3][3] + row[3][4] 
          + row[3][5]
-         + row[3][6] + row[3][7] 
-         + row[3][8] + row[3][9] 
+         + row[3][6] + row[3][7] + row[3][8] + row[3][9] 
          === month + '/' + year ) {
              return row
          }
     })
     const rowDataAsArrayOfObjects = makeObjs(myMonth)
-    return sortToCategories(rowDataAsArrayOfObjects)
+    return {
+            range: sortDuplicatesAndUnvalidDates(myRange).sort(),
+            data: sortToCategories(rowDataAsArrayOfObjects)
+            }
  };
