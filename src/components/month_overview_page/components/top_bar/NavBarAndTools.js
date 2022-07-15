@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { PersonalSpaceContext } from '../../../context/PersonalSpace'
+import { MdPerson } from "react-icons/md";
+import Dropdown from './Dropdown'
 
-export default function NavBarAndTools() {
+export default function NavBarAndTools(props) {
+  const [personalSpaceContext, setPersonalSpaceContext] = useContext(PersonalSpaceContext)
   return (
-    <div className=' flex flex-row absolute my-16 mx-14 bg-my_blue001021 w-28 h-8 text-gray-100'>
-        <div>a</div>
-        <div>b</div>
-        <div>c</div>
+    <div className='flex flex-row fixed left-16 top-16 w-fit h-fit'>
+        <Dropdown data = {props.data}/>
+        <div onClick={() => setPersonalSpaceContext(!personalSpaceContext)} 
+        className='flex items-center bg-my_main w-16 h-16 rounded-lg hover:bg-my_hover_main font-medium hover:font-bold ml-2 justify-center
+                transition ease-out  
+                hover:-translate-y-1
+                hover:scale-10
+                shadow-2xl'>
+          {<MdPerson size={'25px'} color={'#fffaff'}/>}
+        </div>
     </div>
   )
 }
