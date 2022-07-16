@@ -9,6 +9,7 @@ import { MonthStateProvider } from './components/context/monthContext';
 import YearStateProvider from './components/context/yearContext';
 import { MonthDataProvider } from './components/context/monthData';
 import { SheetDataProvider } from './components/context/sheetData';
+import { PersonalSpaceProvider } from './components/context/PersonalSpace';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BalanceProvider>
@@ -16,11 +17,11 @@ root.render(
       <YearStateProvider>
         <MonthDataProvider>
           <SheetDataProvider>
-            
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
- 
+            <PersonalSpaceProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </PersonalSpaceProvider>
           </SheetDataProvider>
         </MonthDataProvider>
       </YearStateProvider>
