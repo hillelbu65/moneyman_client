@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 
 export default function Input({cookieName = '', header = ''}) {
-    const [value, setValue] = useState(Cookies.get(cookieNamed))
+    const [value, setValue] = useState(Cookies.get(cookieName))
   return (
     <div className=' 
         flex 
