@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { MdOutlineClear } from "react-icons/md";
 import { PersonalSpaceContext } from '../context/PersonalSpace';
 import { SheetDataContext } from '../context/sheetData';
+import Input from '../login_page/components/logincard/Input';
 
 export default function PersonalSpacePage() {
 
@@ -37,21 +38,23 @@ export default function PersonalSpacePage() {
         fixed 
         w-3/4 
         h-5/6 
-        bg-my_main 
-        text-my_text_color 
+        bg-my_main
         justify-self-center 
         rounded-lg shadow-2xl 
         animate-comeUp'>
+        <div className='h-full w-full'>
             <div onClick={() => setPersonalSpaceContext(false)} 
             className='
+            absolute
             flex 
             flex-row 
-            my-12 
-            mx-8 
+            top-5
+            left-5
             w-12 
             h-12 
             justify-center 
             items-center 
+            text-my_main_contrast
             bg-my_text_color 
             bg-opacity-20 
             rounded-lg 
@@ -60,71 +63,21 @@ export default function PersonalSpacePage() {
             hover:bg-opacity-30'>
                 <MdOutlineClear/>
             </div>
+        </div>
 
-            <div className='
-            grid 
-            grid-cols-3 
-            bg-opacity-50 
-            w-full h-5/6 
-            rounded-b-lg'>
-                <div className='
-                col-start-1 
-                col-end-4'>
-                    <div className='
-                    flex 
-                    flex-col 
-                    font-normal 
-                    text-base 
-                    text-my_main001021
-                    p-4'>
-                        <div className='
-                        flex 
-                        flex-row '>
-                            <span className='
-                            font-bold 
-                            text-2xl 
-                            ml-2 '>Your data info</span>
-                        </div>
-
-                        <div className=' 
-                        flex 
-                        flex-col  
-                        h-fit p-3 
-                        w-fit 
-                        text-start'>
-                            WorkSheet ID
-                            <input className=' 
-                            p-2 
-                            mt-1 
-                            bg-white 
-                            opacity-50 
-                            rounded-md 
-                            text-my_main_contrast'
-                                onChange={(e) => {setWorkSheetId(e.target.value); setSheetDataContext({
-                                    workSheetId: workSheetId, 
-                                    sheetName: sheetName
-                                })}}
-                                value={workSheetId}></input>
-                        </div>
-                        <div className=' 
-                        flex 
-                        flex-col 
-                        h-fit p-3 
-                        w-fit 
-                        text-start'>
-                            Sheet name
-                            <input className=' 
-                            p-2 mt-1 
-                            bg-white 
-                            opacity-50 
-                            rounded-md 
-                            text-my_main_contrast'
-                                onChange={(e) => {setSheetName(e.target.value); setSheetDataContext({
-                                    workSheetId: workSheetId, 
-                                    sheetName: sheetName
-                                })}}
-                                value={sheetName}></input>
-                        </div>
+            <div className='flex flex-col bg-opacity-50 w-full h-5/6 rounded-b-lg p-4 text-my_main_contrast'>
+                <div className='flex flex-col md:w-2/6 text-start overflow-y-auto'>
+                    <span className='font-bold text-2xl ml-2 '>
+                        Your data info
+                    </span>
+                    <span className='ml-2'>
+                        Update your data by typing new values.
+                    </span>
+                    <div>
+                        <Input cookieName = 'WorkSheetID' header = 'Worksheet ID'/>
+                        <Input cookieName = 'SheetName' header = 'Sheet name'/>
+                        <Input cookieName = 'ClientID' header = 'GCP Client ID'/>
+                        <Input cookieName = 'APIkey' header = 'GCP API key'/>
                     </div>
                 </div>
             </div>
