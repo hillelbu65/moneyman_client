@@ -5,3 +5,11 @@ export const calculateTheSumOfTheCategory = (arrayOfCategoryObjects) => {
     })
     return resolt
 };
+
+export const calculateTheSumOfTheMonth = (arrayOfCategoriesObjects) => {
+    let resolt = 0
+    arrayOfCategoriesObjects.map((obj, index) => {
+        resolt += parseInt(obj.sum)
+    })
+    return resolt.toString()
+};

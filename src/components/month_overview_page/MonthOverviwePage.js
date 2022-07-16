@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { PersonalSpaceContext } from '../context/PersonalSpace';
 import PersonalSpacePage from '../personal_spase/PersonalSpacePage';
+import Balance from './components/Balance';
 import Categories from './components/categories/Categories';
 import ChartMonth from './components/chart/ChartMonth';
 import MonthBar from './components/side_bar/MonthBar';
@@ -13,6 +14,7 @@ export default function MonthOverviwePage() {
   return (
     <div className='p-10 grid grid-cols-8 gap-3'>
         <NavBarAndTools/> 
+        <Balance/>
         <MonthBar/>
         <ChartMonth/>
         <Categories/>
