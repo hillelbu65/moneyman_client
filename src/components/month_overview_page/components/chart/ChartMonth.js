@@ -25,8 +25,6 @@ ChartJS.register(
   Legend
 );
 
-
-
 export default function ChartMonth () {
   //Year context.
   const [yearContext, setYearContext] = useContext(YearContext);
@@ -108,9 +106,8 @@ export default function ChartMonth () {
     }
   };
 
-  
   return (
-    <div className='w-full col-start-2 col-end-8 mt-40 rounded-lg text-my_text_color p-6 border-my_main'>
+    <div className='w-full col-start-2 col-end-8 mt-10 rounded-lg text-my_text_color p-6 border-my_main'>
         <Bar data = {datae} options={options} />
     </div>
   )

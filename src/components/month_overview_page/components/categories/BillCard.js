@@ -18,7 +18,7 @@ export default function BillCard(props) {
     hover:-translate-y-1 
     hover:scale-110'>
         <div className='flex flex-col'>
-            <span className='font-bold m-2'><div className='flex flex-row justify-center items-center'>{props.data.sum}<BiShekel/></div></span>
+            <span className='font-bold m-2'><div className='flex flex-row justify-center items-center'>{props.data.sum}  &#8362; </div></span>
         </div>
         <div className=' 
         flex 

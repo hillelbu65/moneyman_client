@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { MdOutlineClear } from "react-icons/md";
 import { PersonalSpaceContext } from '../context/PersonalSpace';
+
 import Input from '../login_page/components/logincard/Input';
 
 export default function PersonalSpacePage() {

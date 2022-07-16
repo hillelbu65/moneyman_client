@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 
 export default function Input({cookieName = '', header = ''}) {
-    
+    const [value, setValue] = useState(Cookies.get(cookieNamed))
   return (
     <div className=' 
         flex 
@@ -17,8 +17,8 @@ export default function Input({cookieName = '', header = ''}) {
             border-
             bg-opacity-50
              rounded-md'
-            onChange = {(e) => Cookies.set(cookieName, e.target.value)}
-            value = {Cookies.get(cookieName)}/>
+            onChange = {(e) => {Cookies.set(cookieName, e.target.value); setValue(Cookies.get(cookieName))}}
+            value = {value}/>
     </div>
   )
 }
