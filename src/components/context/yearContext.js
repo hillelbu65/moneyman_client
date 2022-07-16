@@ -4,7 +4,7 @@ export const YearContext = createContext({})
 
 export default function YearStateProvider(props) {
 
-  const [yearContext, setYearContext] = useState('');
+  const [yearContext, setYearContext] = useState(new Date().getFullYear().toString());
 
   return (
     <div>
