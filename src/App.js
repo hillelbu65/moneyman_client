@@ -3,9 +3,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import './App.css';
 import { gapi } from 'gapi-script'
 import Main from './components/Main';
+import Cookies from 'js-cookie';
 
-const API_KEY = '<YOUR API KEY>'
-const CLIENT_ID = '<YOUR CLIENT ID>';
+
+const API_KEY = Cookies.get('APIkey')
+const CLIENT_ID = Cookies.get('ClientID');
 const SCOPES = 'https://www.googleapis.com/auth/drive'
 
 function App() {

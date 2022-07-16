@@ -1,3 +1,4 @@
+import Cookies from "js-cookie"
 import React, { createContext,  useState } from "react"
 
 export const SheetDataContext = createContext() 
@@ -6,8 +7,8 @@ export const SheetDataProvider = (props) =>
 {
     const [sheetDataContext, setSheetDataContext] = useState(
         {
-         workSheetId:'1oHvBvgpsMOUHSDVUocOtGLjJyRj6p6H_krfkSX2UgUs', 
-         sheetName:'test'    
+         workSheetId: Cookies.get('WorkSheetID'), 
+         sheetName: Cookies.get('SheetName')    
         })
 
     return ( 
