@@ -3,7 +3,7 @@ import { MonthContext } from '../../../context/monthContext';
 import { MonthDataContext } from '../../../context/monthData';
 import { SheetDataContext } from '../../../context/sheetData';
 import { YearContext } from '../../../context/yearContext';
-import { getMonth } from '../../Data_management/pullData';
+import { getMonth } from '../../../Data_management/pullData';
 
 export default function Dropdown(props) {
     const [dropdownOpen, setDropdownOpen] = useState(false);

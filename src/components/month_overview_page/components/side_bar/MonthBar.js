@@ -4,7 +4,7 @@ import { MonthContext } from '../../../context/monthContext';
 export default function MonthBar() {
     //Month context.
     const [monthContext, setMonthContext] = useContext(MonthContext);
-    const [Clicked, setClicked] = useState('00')
+    const [Clicked, setClicked] = useState('01')
     const months = ['01Jan', '02Feb', '03Mar', '04Apr', '05May', '06Jun', '07Jul', '08Aug', '09Sep', '10Oct', '11Nov', '12Dec']
 
     const selections = months.map((el, index) => {
