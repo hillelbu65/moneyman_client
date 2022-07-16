@@ -1,22 +1,11 @@
-import React, { useContext, useState } from 'react';
-import { useEffect } from 'react';
+import React, { useContext } from 'react';
 import { MdOutlineClear } from "react-icons/md";
 import { PersonalSpaceContext } from '../context/PersonalSpace';
-import { SheetDataContext } from '../context/sheetData';
 import Input from '../login_page/components/logincard/Input';
 
 export default function PersonalSpacePage() {
 
-    //Sheet data context.
-    const [sheetDataContext, setSheetDataContext] = useContext(SheetDataContext);
-    const[workSheetId, setWorkSheetId] = useState('');
-    const[sheetName, setSheetName] = useState('');
     const [personalSpaceContext, setPersonalSpaceContext] = useContext(PersonalSpaceContext)
-
-    useEffect(() => {
-        setWorkSheetId(sheetDataContext.workSheetId);
-        setSheetName(sheetDataContext.sheetName)
-    }, [])
 
   return (
     <div className=' 
