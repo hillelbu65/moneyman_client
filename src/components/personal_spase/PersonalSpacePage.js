@@ -3,6 +3,7 @@ import { MdOutlineClear } from "react-icons/md";
 import { PersonalSpaceContext } from '../context/PersonalSpace';
 
 import Input from '../login_page/components/logincard/Input';
+import DataInfo from './components/DataInfo';
 
 export default function PersonalSpacePage() {
 
@@ -57,18 +58,7 @@ export default function PersonalSpacePage() {
 
             <div className='flex flex-col bg-opacity-50 w-full h-5/6 rounded-b-lg p-4 text-my_main_contrast'>
                 <div className='flex flex-col md:w-2/6 text-start overflow-y-auto'>
-                    <span className='font-bold text-2xl ml-2 '>
-                        Your data info
-                    </span>
-                    <span className='ml-2'>
-                        Update your data by typing new values.
-                    </span>
-                    <div>
-                        <Input cookieName = 'WorkSheetID' header = 'Worksheet ID'/>
-                        <Input cookieName = 'SheetName' header = 'Sheet name'/>
-                        <Input cookieName = 'ClientID' header = 'GCP Client ID'/>
-                        <Input cookieName = 'APIkey' header = 'GCP API key'/>
-                    </div>
+                    <DataInfo/>
                 </div>
             </div>
         </div>
