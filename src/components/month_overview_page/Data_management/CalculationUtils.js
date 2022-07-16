@@ -4,5 +4,4 @@ export const calculateTheSumOfTheCategory = (arrayOfCategoryObjects) => {
         resolt += parseInt(obj.amount)
     })
     return resolt
-}
-
+};
