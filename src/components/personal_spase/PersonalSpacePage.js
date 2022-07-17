@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { MdOutlineClear } from "react-icons/md";
 import { PersonalSpaceContext } from '../context/PersonalSpace';
-
-import Input from '../login_page/components/logincard/Input';
+import CurrencySettings from './components/CurrencySettings';
 import DataInfo from './components/DataInfo';
 
 export default function PersonalSpacePage() {
@@ -33,32 +32,34 @@ export default function PersonalSpacePage() {
         justify-self-center 
         rounded-lg shadow-2xl 
         animate-comeUp'>
-        <div className='h-full w-full'>
-            <div onClick={() => setPersonalSpaceContext(false)} 
-            className='
-            absolute
-            flex 
-            flex-row 
-            top-5
-            left-5
-            w-12 
-            h-12 
-            justify-center 
-            items-center 
-            text-my_main_contrast
-            bg-my_text_color 
-            bg-opacity-20 
-            rounded-lg 
-            text-2xl 
-            hover:text-3xl 
-            hover:bg-opacity-30'>
-                <MdOutlineClear/>
+
+            <div className='h-full w-full'>
+                <div onClick={() => setPersonalSpaceContext(false)} 
+                className='
+                absolute
+                flex 
+                flex-row 
+                top-5
+                left-5
+                w-12 
+                h-12 
+                justify-center 
+                items-center 
+                text-my_main_contrast
+                bg-my_text_color 
+                bg-opacity-20 
+                rounded-lg 
+                text-2xl 
+                hover:text-3xl 
+                hover:bg-opacity-30'>
+                    <MdOutlineClear/>
+                </div>
             </div>
-        </div>
 
             <div className='flex flex-col bg-opacity-50 w-full h-5/6 rounded-b-lg p-4 text-my_main_contrast'>
-                <div className='flex flex-col md:w-2/6 text-start overflow-y-auto'>
+                <div className='flex flex-col md:w-2/6 text-start overflow-y-auto gap-8'>
                     <DataInfo/>
+                    <CurrencySettings/>
                 </div>
             </div>
         </div>

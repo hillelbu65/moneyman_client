@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import {BiShekel} from 'react-icons/bi'
+import React, { useContext, useState } from 'react'
+import { CurrencyContext } from '../../../context/CurrencyContext';
 
 export default function BillCard(props) {
+  const [currencyContext, setCurrencyContext] = useContext(CurrencyContext);
 
   return (
     <div className='
@@ -12,13 +13,12 @@ export default function BillCard(props) {
     group
     duration-100 
   bg-my_main
-   bg-opacity-90
-     text-my_text_color
-    transition ease-out  
-    hover:-translate-y-1 
-    hover:scale-110'>
+    bg-opacity-90
+  text-my_text_color'>
         <div className='flex flex-col'>
-            <span className='font-bold m-2'><div className='flex flex-row justify-center items-center'>{props.data.sum}  &#8362; </div></span>
+          <div className='flex flex-row justify-center items-center font-bold m-2 gap-1 text-lg'>
+            <div>{props.data.sum}</div> <div className='mt-1'>{currencyContext.icon}</div> 
+          </div>
         </div>
         <div className=' 
         flex 
