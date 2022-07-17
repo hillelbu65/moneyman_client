@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { CurrencyContext } from '../../context/CurrencyContext';
 import { MonthContext } from '../../context/monthContext';
 import { MonthDataContext } from '../../context/monthData';
 import { SheetDataContext } from '../../context/sheetData';
@@ -18,6 +19,8 @@ export default function Balance() {
     const [monthDataContext, setMonthDataContext] = useContext(MonthDataContext);
     //Sheet data context.
     const [sheetDataContext, setSheetDataContext] = useContext(SheetDataContext);
+    //Currency context.
+    const [currencyContext, setCurrencyContext] = useContext(CurrencyContext);
 
   const getMonthData = async () => {
     const data = await getMonth(sheetDataContext.workSheetId, sheetDataContext.sheetName ,monthContext, yearContext)
@@ -42,11 +45,19 @@ export default function Balance() {
     place-content-center
     text-my_main
     text-3xl
+    items-center
     '>
-      <div className=' font-bold text-my_main_contrast'>
+      <div className='font-bold text-my_main_contrast'>
         Expenses
       </div>
-      {sumData}
+      <div className='flex flex-row justify-center items-center'>
+       {sumData} 
+        <div>
+          {currencyContext.icon}
+        </div>
+       
+      </div>
+     
     </div>
   </div>)
 }

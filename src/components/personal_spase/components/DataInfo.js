@@ -3,7 +3,7 @@ import Input from '../../login_page/components/logincard/Input'
 
 export default function DataInfo() {
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col p-3'>
         <span className='font-bold text-2xl ml-2 '>
             Your data info
         </span>

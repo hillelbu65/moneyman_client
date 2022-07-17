@@ -17,7 +17,7 @@ export default function Input({cookieName = '', header = ''}) {
             border-
             bg-opacity-50
              rounded-md'
-            onChange = {(e) => {Cookies.set(cookieName, e.target.value); setValue(Cookies.get(cookieName))}}
+            onChange = {(e) => {Cookies.set(cookieName, e.target.value, { expires: 7 }); setValue(Cookies.get(cookieName))}}
             value = {value}/>
     </div>
   )
