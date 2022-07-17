@@ -10,6 +10,7 @@ import YearStateProvider from './components/context/yearContext';
 import { MonthDataProvider } from './components/context/monthData';
 import { SheetDataProvider } from './components/context/sheetData';
 import { PersonalSpaceProvider } from './components/context/PersonalSpace';
+import { CurrencyProvider } from './components/context/CurrencyContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BalanceProvider>
@@ -19,7 +20,11 @@ root.render(
           <SheetDataProvider>
             <PersonalSpaceProvider>
               <BrowserRouter>
-                <App />
+                <CurrencyProvider>
+
+                  <App />
+
+                </CurrencyProvider>
               </BrowserRouter>
             </PersonalSpaceProvider>
           </SheetDataProvider>
