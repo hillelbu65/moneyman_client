@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { PersonalSpaceContext } from '../context/PersonalSpace';
 import PersonalSpacePage from '../personal_spase/PersonalSpacePage';
 import Balance from './components/Balance';

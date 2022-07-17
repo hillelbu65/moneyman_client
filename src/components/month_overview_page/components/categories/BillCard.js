@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { CurrencyContext } from '../../../context/CurrencyContext';
 
 export default function BillCard(props) {
-  const [currencyContext, setCurrencyContext] = useContext(CurrencyContext);
+  const [[currencyContext, setCurrencyContext], [itsUpdate, setItsUpdate]] = useContext(CurrencyContext);
 
   return (
     <div className='

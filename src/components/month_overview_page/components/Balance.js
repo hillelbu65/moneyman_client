@@ -20,7 +20,7 @@ export default function Balance() {
     //Sheet data context.
     const [sheetDataContext, setSheetDataContext] = useContext(SheetDataContext);
     //Currency context.
-    const [currencyContext, setCurrencyContext] = useContext(CurrencyContext);
+    const [[currencyContext, setCurrencyContext], [itsUpdate, setItsUpdate]] = useContext(CurrencyContext);
 
   const getMonthData = async () => {
     const data = await getMonth(sheetDataContext.workSheetId, sheetDataContext.sheetName ,monthContext, yearContext)
