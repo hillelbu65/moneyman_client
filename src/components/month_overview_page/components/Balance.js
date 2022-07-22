@@ -51,11 +51,10 @@ export default function Balance() {
         Expenses
       </div>
       <div className='flex flex-row justify-center items-center'>
-       {sumData} 
-        <div>
+        <div className='mt-1'>
           {currencyContext.icon}
         </div>
-       
+        {sumData} 
       </div>
      
     </div>

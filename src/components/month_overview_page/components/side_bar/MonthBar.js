@@ -41,9 +41,9 @@ export default function MonthBar() {
     h-4/5  
     bg-my_main 
     rounded-lg 
-    overflow-y-auto 
+    overflow-y-auto
     shadow-2xl'>
-      <div className='overflow-y-auto'>
+      <div className=''>
         {selections}
       </div>
     </div>

@@ -26,6 +26,7 @@ export default function Categories() {
     useEffect(() => {
       getDataFromGoogle()
     }, [monthContext, yearContext])
+
   
     const categories = data.map((category, index) => {
       return <Category key={index} data = {category.sub_categories_data} />

@@ -46,12 +46,11 @@ export default function PersonalSpacePage() {
                 justify-center 
                 items-center 
                 text-my_main_contrast
-                bg-my_text_color 
-                bg-opacity-20 
+                bg-my_creame 
                 rounded-lg 
                 text-2xl 
                 hover:text-3xl 
-                hover:bg-opacity-30'>
+                hover:bg-opacity-80'>
                     <MdOutlineClear/>
                 </div>
             </div>

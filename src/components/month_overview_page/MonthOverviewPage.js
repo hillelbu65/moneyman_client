@@ -1,4 +1,7 @@
 import React, { useContext } from 'react'
+import Billdetailspage from '../Bill_Page_details/Billdetailspage';
+
+import { BillDetailsContext } from '../context/BillDetailsContext';
 import { PersonalSpaceContext } from '../context/PersonalSpace';
 import PersonalSpacePage from '../personal_spase/PersonalSpacePage';
 import Balance from './components/Balance';
@@ -8,7 +11,8 @@ import MonthBar from './components/side_bar/MonthBar';
 import NavBarAndTools from './components/top_bar/NavBarAndTools'
 
 export default function MonthOverviwePage() {
-  const [personalSpaceContext, setPersonalSpaceContext] = useContext(PersonalSpaceContext)
+  const [personalSpaceContext, setPersonalSpaceContext] = useContext(PersonalSpaceContext);
+  const [[billDetailsOn, setBillDetailsOn], [billCategory, setBillCategory], [billName, setBillName]] = useContext(BillDetailsContext);
 
   
   return (
@@ -19,6 +23,7 @@ export default function MonthOverviwePage() {
         <ChartMonth/>
         <Categories/>
         {personalSpaceContext ? <PersonalSpacePage/>  : ''}
+        {billDetailsOn ? <Billdetailspage/> : ''}
     </div>
   )
 }

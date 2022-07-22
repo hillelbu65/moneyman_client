@@ -16,7 +16,9 @@ const makeObjs = (array_Of_Arrays)=> {
             category: array[0],
             billName: array[1],
             amount: array[2],
-            date: array[3]
+            date: array[3],
+            month: array[3][3] + array[3][4],
+            year: array[3][6] + array[3][7] + array[3][8] + array[3][9] 
         }
     })
     
@@ -80,7 +82,7 @@ export const getMonth  = async (file_id, sheet_name, month, year) => {
   const myRange = response.map((line) => line[3][6] + line[3][7] + line[3][8] + line[3][9]);
 
 
-  const myMonth = response.filter((row) => {
+  const Month = response.filter((row) => {
         if (
         row[3][3] + row[3][4] 
         + row[3][5]
@@ -89,7 +91,7 @@ export const getMonth  = async (file_id, sheet_name, month, year) => {
             return row
         }
   })
-  const rowDataAsArrayOfObjects = makeObjs(myMonth)
+  const rowDataAsArrayOfObjects = makeObjs(Month)
   const  data = {
     range: sortDuplicatesAndUnvalidDates(myRange).sort(),
     data: sortToCategories(rowDataAsArrayOfObjects)
@@ -99,4 +101,53 @@ export const getMonth  = async (file_id, sheet_name, month, year) => {
     // The object contains:
     // - An array of objects that each object contains information about a particular category.
     // - An array of years in which transactions were acquired.
+
+
+  const month = (arrayOfBillsObjects , month) => {
+    const resolt = arrayOfBillsObjects.filter((bill) => {
+      if(bill.month === month) {
+        return bill
+      }
+    })
+    return { 
+      month: month, 
+      bills:  resolt,
+      sum: calculateTheSumOfTheCategory(resolt)
+    }
+  } //return object that contain: 
+    // - month: The month that those transactions pulled from.
+    // - bills: Array of transactions as objects.
+    // - sum: The sum of the the transactions. 
+
+  
+  export const getYearBillData = async (file_id, sheet_name, billName, year) => {
+    const response  = await pullFileData(file_id, sheet_name);
+    const Year = response.filter((row) => {
+      if (
+      row[3][6] + row[3][7] + row[3][8] + row[3][9] === year ) {
+          return row
+      }
+    })
+    const billData = Year.filter((bill) => bill[1] === billName)
+    const data = makeObjs(billData)
+
+    const sortMonths = () => {
+    const resolt = [];
+      data.map((bill) => {
+        if (resolt.find((el) => el.bills[0].month == bill.month) === undefined) {
+          resolt.push(month(data, bill.month))
+        }
+      })
+      return resolt
+    }
+    
+    console.log(data)
+    return {
+      data: data,
+      arrayOfMonthsData : sortMonths(),
+    }
+    
+  } // Return object that contain: 
+    // - data: Array of objects each object is a transaction.
+    // - arrayOfMonthsData: Array of arrays that each array contains transactions of a specific business in each month..
         
