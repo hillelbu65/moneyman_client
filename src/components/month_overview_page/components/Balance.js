@@ -23,8 +23,7 @@ export default function Balance() {
     const [[currencyContext, setCurrencyContext], [itsUpdate, setItsUpdate]] = useContext(CurrencyContext);
 
   const getMonthData = async () => {
-    const data = await getMonth(sheetDataContext.workSheetId, sheetDataContext.sheetName ,monthContext, yearContext)
-    console.log(calculateTheSumOfTheMonth(data.data))
+    const data = await getMonth(sheetDataContext.workSheetId, sheetDataContext.sheetName ,monthContext, yearContext);
     setSumData(calculateTheSumOfTheMonth(data.data))
   }
 

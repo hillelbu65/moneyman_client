@@ -44,7 +44,6 @@ export default function ChartYear (props) {
 
   const getData = async () => {
     const data = await getYearBillData(sheetDataContext.workSheetId, sheetDataContext.sheetName, props.billName, yearContext)
-    console.log(data)
 
     const dataChart = {    
       labels: data.arrayOfMonthsData.map((el) => el.month),

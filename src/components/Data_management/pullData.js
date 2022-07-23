@@ -141,7 +141,6 @@ export const getMonth  = async (file_id, sheet_name, month, year) => {
       return resolt
     }
     
-    console.log(data)
     return {
       data: data,
       arrayOfMonthsData : sortMonths(),

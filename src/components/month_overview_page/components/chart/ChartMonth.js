@@ -45,10 +45,7 @@ export default function ChartMonth () {
 
   const getMonthData = async () => {
     const data = await getMonth(sheetDataContext.workSheetId, sheetDataContext.sheetName ,monthContext, yearContext)
-    //Update the context state. 
     setMonthDataContext(data)
-    //Update the local state.
-    console.log(data)
 
     const dataTo = {    
       labels: data.data.map((el) => el.category),

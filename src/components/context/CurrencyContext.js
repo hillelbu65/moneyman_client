@@ -26,7 +26,6 @@ export const  CurrencyProvider = (props) =>
         const find = icons.findIndex((el) => el === currency);
         const index  = find
         const icon = icons[index + 1]
-        console.log(icon)
         setCurrencyContext({icon: icon, selection: currency})
     }, [itsUpdate])
 

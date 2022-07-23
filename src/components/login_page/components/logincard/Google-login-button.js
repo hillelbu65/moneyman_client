@@ -11,7 +11,6 @@ export default function GoogleLoginButton () {
 
 
     const onSuccess = (response) => {
-        console.log('Logd In : ' + response.profileObj)
         setGoogleData(response)
         navigate('/a')
     }

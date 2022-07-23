@@ -20,7 +20,6 @@ export default function Months() {
     const getData = async () => {
       const response = await getYearBillData(sheetDataContext.workSheetId, sheetDataContext.sheetName, billName, yearContext)
       setYearData(response.arrayOfMonthsData)
-      console.log(response)
       return response
     }
   
@@ -36,7 +35,6 @@ export default function Months() {
             return el
            }
         })
-        console.log(monthName)
         return (<Month key = {index} transactions = {element.bills} monthName = {monthName[0]}/>)
     })
 

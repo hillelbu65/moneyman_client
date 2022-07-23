@@ -31,7 +31,6 @@ export default function Dropdown(props) {
 
     useEffect(() => {
         const closeDropdown = (e) => {
-            console.log(e)
             if(e.path[0].id !== 'dropDown' ){
                 
                 setDropdownOpen(false)
