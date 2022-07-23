@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/moneyman_client/static/css/main.f3fc1906.css",
+    "main.js": "/moneyman_client/static/js/main.69fadcaf.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/moneyman_client/static/js/787.c4e7f8f9.chunk.js",
+    "index.html": "/moneyman_client/index.html",
+    "main.f3fc1906.css.map": "/moneyman_client/static/css/main.f3fc1906.css.map",
+    "main.69fadcaf.js.map": "/moneyman_client/static/js/main.69fadcaf.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/moneyman_client/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3fc1906.css",
+    "static/js/main.69fadcaf.js"
+  ]
+}
