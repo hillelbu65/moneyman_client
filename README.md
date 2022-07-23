@@ -1,2 +1,2 @@
-#moneyman_client
-A GUI for moneyman 
+### moneyman_client
+#A GUI for moneyman 
