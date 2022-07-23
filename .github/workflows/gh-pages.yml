@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
       - run: npm run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ proses.env.REACT_APP_GITHUB_TOKEN }}
           publish_dir: build
