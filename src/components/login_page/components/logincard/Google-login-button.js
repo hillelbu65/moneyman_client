@@ -3,8 +3,6 @@ import { GoogleLogin } from 'react-google-login';
 import { useNavigate } from "react-router-dom";
 import {BsGoogle} from 'react-icons/bs'
 
-const clientId = '214100381972-lpdih25hg9rhkk8tb37lsbmev4aflr7d.apps.googleusercontent.com'
-
 export default function GoogleLoginButton () {
     const [googleData, setGoogleData] = useState({})
     const navigate = useNavigate()
@@ -22,7 +20,7 @@ export default function GoogleLoginButton () {
   return (
     <div className=''>
         <GoogleLogin
-            clientId={clientId}
+            clientId={process.env.REACT_APP_GCP_CLIENT_ID}
             onSuccess={onSuccess}
             onFailure={onFailure} 
             cookiePolicy={'single_host_origin'}

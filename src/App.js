@@ -8,7 +8,7 @@ import Cookies from 'js-cookie';
 
 const API_KEY = Cookies.get('APIkey');
 const CLIENT_ID = process.env.REACT_APP_GCP_CLIENT_ID;
-const SCOPES = process.env.GCP_SCOPES;
+const SCOPES = process.env.REACT_APP_GITHUB_TOKEN;
 
 function App() {
 
