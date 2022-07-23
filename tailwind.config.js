@@ -17,7 +17,8 @@ module.exports = {
       },
       animation: {
         comeUp: 'comeUp 0.1s ease-in',
-        appear:'appear 3s ease-in' 
+        comeLeft:'comeLeft 0.1s ease-in',
+        comeRight: 'comeRight 0.1s ease-in'
       }, 
 
       keyframes: {
@@ -42,12 +43,45 @@ module.exports = {
           }
         },
 
-        appear: {
-          'from' : { 
-            backgroundColor: 'jk'
+        comeLeft: {
+          '0%' : {
+            transform: 'translateX(100%)'
+          }, 
+          '20%' : {
+            transform: 'translateX(80%)'
           },
-          'to' : {
-            backgroundColor: 'yellow'
+          '40%' : {
+            transform: 'translateX(60%)'
+          },
+          '60%' : {
+            transform: 'translateX(40%)'
+          },
+          '80%' : {
+            transform: 'translateX(20%)'
+          },
+          '100%' : {
+            transform: 'translateX(0%)'
+          }
+        },
+
+        comeRight: {
+          '0%' : {
+            transform: 'translateX(-100%)'
+          }, 
+          '20%' : {
+            transform: 'translateX(-80%)'
+          },
+          '40%' : {
+            transform: 'translateX(-60%)'
+          },
+          '60%' : {
+            transform: 'translateX(-40%)'
+          },
+          '80%' : {
+            transform: 'translateX(-20%)'
+          },
+          '100%' : {
+            transform: 'translateX(-0%)'
           }
         }
       }
