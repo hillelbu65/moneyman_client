@@ -5,7 +5,6 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 
 export default function LoginCard() {
-  const navigate = useNavigate();
 
   const[step1, setStep1] = useState(true);
   const[step2, setStep2] = useState(false);
