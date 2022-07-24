@@ -1,7 +1,8 @@
-import React from "react"
-import axios from 'axios'
-import { gapi } from 'gapi-script'
+import React from "react";
+import axios from 'axios';
+import { gapi } from "gapi-script";
 import { calculateTheSumOfTheCategory } from "./CalculationUtils";
+
 
 const pullFileData = async (file_id, sheet_name) => {
     const accessToken = await gapi.auth.getToken().access_token;

@@ -1,17 +1,18 @@
 
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './App.css';
 import { gapi } from 'gapi-script'
 import Main from './components/Main';
 import Cookies from 'js-cookie';
 
 
-const API_KEY = Cookies.get('APIkey');
+const API_KEY = process.env.REACT_APP_GCP_CLIENT_ID;
 const CLIENT_ID = process.env.REACT_APP_GCP_CLIENT_ID;
 const SCOPES = process.env.REACT_APP_GCP_SCOPES;
 
-function App() {
 
+function App() {
+  /*global google */
   useEffect(() => {
     const start =  () => {
       gapi.client.init({
