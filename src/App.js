@@ -12,7 +12,6 @@ const SCOPES = process.env.REACT_APP_GCP_SCOPES;
 
 
 function App() {
-  /*global google */
   useEffect(() => {
     const start =  () => {
       gapi.client.init({
