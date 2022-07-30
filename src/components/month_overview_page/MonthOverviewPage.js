@@ -19,7 +19,7 @@ export default function MonthOverviewPage() {
   ] = useContext(BillDetailsContext);
 
   return (
-    <div className="p-10 grid grid-cols-8 gap-3">
+    <div className="p-0 flex flex-col sm:p-10 sm:grid sm:grid-cols-8 gap-3">
       <NavBarAndTools />
       <Balance />
       <MonthBar />

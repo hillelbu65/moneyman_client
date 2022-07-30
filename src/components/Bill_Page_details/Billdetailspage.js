@@ -67,7 +67,7 @@ export default function Billdetailspage() {
           >
             <MdOutlineClear />
           </div>
-          <div className=" flex flex-rows items-center absolute top-8 left-20 text-xl font-bold text-my_creame">
+          <div className=" flex flex-rows items-center absolute top-8 left-20 text-lg sm:text-xl font-bold text-my_creame">
             {" "}
             {yearContext}
             <span className=" text-my_main_contrast mt-1">
@@ -81,7 +81,7 @@ export default function Billdetailspage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-8 gap-3 w-full h-5/6 rounded-b-lg p-4 text-my_main_contrast overflow-y-auto">
+        <div className="sm:grid grid-cols-8 gap-3 w-full h-5/6 rounded-b-lg p-4 text-my_main_contrast overflow-y-auto">
           <ChartYear billName={billName} />
           <BillView billName={billName} />
         </div>

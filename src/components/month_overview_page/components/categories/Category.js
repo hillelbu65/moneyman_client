@@ -9,7 +9,7 @@ export default function Category(props) {
   return (
     <div className="category mb-3 flex flex-col">
       <div className="flex flex-row p-4">
-        <h1 className="flex-start self-start font-bold text-3xl text-my_main_contrast">
+        <h1 className="flex-start self-start font-bold text-2xl sm:text-3xl text-my_main_contrast">
           {props.data[0].category}
         </h1>
       </div>

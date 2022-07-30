@@ -60,12 +60,12 @@ export default function MonthBar() {
     flex 
     fixed 
     items-center
-    right-0
-    bottom-0
-    w-full 
+    bottom-3
+     self-center
+     justify-self-center
+    w-5/6
     h-22  
     bg-my_main 
-    rounded-none 
     overflow-auto
     shadow-2xl
     sm:top-16
@@ -74,7 +74,7 @@ export default function MonthBar() {
     sm:flex-col
     sm:h-4/5
     sm:overflow-y-auto
-    sm:rounded-lg
+    rounded-lg
     "
     >
       {selections}

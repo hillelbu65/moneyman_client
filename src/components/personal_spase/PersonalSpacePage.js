@@ -62,7 +62,7 @@ export default function PersonalSpacePage() {
           </div>
         </div>
 
-        <div className="flex flex-col bg-opacity-50 w-full h-5/6 rounded-b-lg p-4 text-my_main_contrast">
+        <div className="flex flex-col bg-opacity-50 w-full h-5/6 rounded-b-lg sm:p-4 text-my_main_contrast">
           <div className="flex flex-col md:w-2/6 text-start overflow-y-auto gap-8">
             <DataInfo />
             <CurrencySettings />
