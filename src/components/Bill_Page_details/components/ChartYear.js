@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,13 +7,13 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-import { YearContext } from '../../context/yearContext';
-import { MonthContext } from '../../context/monthContext';
-import { MonthDataContext } from '../../context/monthData';
-import { SheetDataContext } from '../../context/sheetData';
-import { getMonth, getYearBillData } from '../../Data_management/pullData';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+import { YearContext } from "../../context/yearContext";
+import { MonthContext } from "../../context/monthContext";
+import { MonthDataContext } from "../../context/monthData";
+import { SheetDataContext } from "../../context/sheetData";
+import { getMonth, getYearBillData } from "../../data_management/pullData";
 
 ChartJS.register(
   CategoryScale,
@@ -24,7 +24,7 @@ ChartJS.register(
   Legend
 );
 
-export default function ChartYear (props) {
+export default function ChartYear(props) {
   //Year context.
   const [yearContext, setYearContext] = useContext(YearContext);
   //Month context.
@@ -33,36 +33,45 @@ export default function ChartYear (props) {
   const [monthDataContext, setMonthDataContext] = useContext(MonthDataContext);
   //Sheet data context.
   const [sheetDataContext, setSheetDataContext] = useContext(SheetDataContext);
-      
+
   const [dataCHART, setDataCHART] = useState({
-    labels: ['padding', 'the', 'chart'],
-    datasets: [{
-    lebal: "padding",
-    data: [1, 2, 3]
-    }]
-  })
+    labels: ["padding", "the", "chart"],
+    datasets: [
+      {
+        lebal: "padding",
+        data: [1, 2, 3],
+      },
+    ],
+  });
 
   const getData = async () => {
-    const data = await getYearBillData(sheetDataContext.workSheetId, sheetDataContext.sheetName, props.billName, yearContext)
+    const data = await getYearBillData(
+      sheetDataContext.workSheetId,
+      sheetDataContext.sheetName,
+      props.billName,
+      yearContext
+    );
 
-    const dataChart = {    
+    const dataChart = {
       labels: data.arrayOfMonthsData.map((el) => el.month),
-      datasets: [{
-      label: yearContext,
-      data: data.arrayOfMonthsData.map((el) => el.sum),
-      backgroundColor: '#824600',
-      fill: true,
+      datasets: [
+        {
+          label: yearContext,
+          data: data.arrayOfMonthsData.map((el) => el.sum),
+          backgroundColor: "#824600",
+          fill: true,
 
-      borderWidth: 1,
-      borderRadius: 10
-      }]
-    }
-    return dataChart
-  }
+          borderWidth: 1,
+          borderRadius: 10,
+        },
+      ],
+    };
+    return dataChart;
+  };
 
   useEffect(() => {
-    getData().then(data => setDataCHART(data))
-  }, [yearContext, monthContext])
+    getData().then((data) => setDataCHART(data));
+  }, [yearContext, monthContext]);
 
   const options = {
     responsive: true,
@@ -70,7 +79,7 @@ export default function ChartYear (props) {
       title: {
         display: true,
       },
-      legend: {display: false}
+      legend: { display: false },
     },
     scales: {
       y: {
@@ -79,31 +88,31 @@ export default function ChartYear (props) {
         ticks: {
           display: false,
           font: {
-            size: 1
-          }
+            size: 1,
+          },
         },
         grid: {
           display: false,
-        }
+        },
       },
       x: {
-       color: 'white',
+        color: "white",
         ticks: {
-          color: '#824600',
+          color: "#824600",
           font: {
-            size: 11
-          }
+            size: 11,
+          },
         },
         grid: {
           display: false,
-        }
+        },
       },
-    }
+    },
   };
 
   return (
-    <div className='w-full col-start-2 col-end-8 rounded-lg text-my_text_color p-6 border-my_main'>
-        <Bar data = {dataCHART} options={options} />
+    <div className="w-full col-start-2 col-end-8 rounded-lg text-my_text_color p-6 border-my_main">
+      <Bar data={dataCHART} options={options} />
     </div>
-  )
+  );
 }

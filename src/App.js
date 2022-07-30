@@ -1,32 +1,29 @@
+import React, { useEffect } from "react";
+import "./App.css";
+import { gapi } from "gapi-script";
+import Main from "./components/Main";
+import Cookies from "js-cookie";
 
-import React, { useEffect } from 'react'
-import './App.css';
-import { gapi } from 'gapi-script'
-import Main from './components/Main';
-import Cookies from 'js-cookie';
-
-
-const API_KEY = process.env.REACT_APP_GCP_CLIENT_ID;
-const CLIENT_ID = process.env.REACT_APP_GCP_CLIENT_ID;
+const API_KEY = Cookies.get("APIkey"); 
+const CLIENT_ID = Cookies.get("ClientID");
 const SCOPES = process.env.REACT_APP_GCP_SCOPES;
-
 
 function App() {
   useEffect(() => {
-    const start =  () => {
+    const start = () => {
       gapi.client.init({
         apiKey: API_KEY,
         clientId: CLIENT_ID,
-        scope: SCOPES
-      })
+        scope: SCOPES,
+      });
     };
 
-    gapi.load('client:auth2', start);
+    gapi.load("client:auth2", start);
   }, []);
 
   return (
     <div className="App">
-      <Main/>
+      <Main />
     </div>
   );
 }

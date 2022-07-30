@@ -13,7 +13,7 @@ import { YearContext } from '../../../context/yearContext';
 import { MonthContext } from '../../../context/monthContext';
 import { MonthDataContext } from '../../../context/monthData';
 import { SheetDataContext } from '../../../context/sheetData';
-import { getMonth } from '../../../Data_management/pullData';
+import { getMonth } from '../../../data_management/pullData';
 
 
 ChartJS.register(

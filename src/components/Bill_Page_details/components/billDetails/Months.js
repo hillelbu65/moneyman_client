@@ -3,7 +3,7 @@ import { BillDetailsContext } from '../../../context/BillDetailsContext';
 import { MonthContext } from '../../../context/monthContext';
 import { SheetDataContext } from '../../../context/sheetData';
 import { YearContext } from '../../../context/yearContext';
-import { getYearBillData } from '../../../Data_management/pullData';
+import { getYearBillData } from '../../../data_management/pullData';
 import Month from './Month';
 
 export default function Months() {
