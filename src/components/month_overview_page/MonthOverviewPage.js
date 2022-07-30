@@ -9,7 +9,7 @@ import ChartMonth from "./components/chart/ChartMonth";
 import MonthBar from "./components/side_bar/MonthBar";
 import NavBarAndTools from "./components/top_bar/NavBarAndTools";
 
-export default function MonthOverviwePage() {
+export default function MonthOverviewPage() {
   const [personalSpaceContext, setPersonalSpaceContext] =
     useContext(PersonalSpaceContext);
   const [

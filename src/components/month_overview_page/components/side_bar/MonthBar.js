@@ -63,7 +63,7 @@ export default function MonthBar() {
     right-0
     bottom-0
     w-full 
-    h-24  
+    h-22  
     bg-my_main 
     rounded-none 
     overflow-auto

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-export default function Step1 () {
-
+export default function Step1() {
   return (
-    <div className='
+    <div
+      className="
         flex 
         flex-col 
         items-start
@@ -13,23 +13,30 @@ export default function Step1 () {
         w-fit 
         mt-8 
         ml-4 
-      text-my_creame'>
-            Welcome
-        <div className='
+      text-my_creame"
+    >
+      Welcome
+      <div
+        className="
         flex 
         flex-row 
-        items-start'>
-            <div className=' 
+        items-start"
+      >
+        <div
+          className=" 
             mr-3 
-            w-fit'>
-                to
-            </div>
-            <div className=' 
-            text-my_main_contrast 
-            w-fit'>
-                Moneyman
-            </div>
+            w-fit"
+        >
+          to
         </div>
+        <div
+          className=" 
+            text-my_main_contrast 
+            w-fit"
+        >
+          Moneyman
+        </div>
+      </div>
     </div>
-  )
+  );
 }

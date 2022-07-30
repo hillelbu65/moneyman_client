@@ -1,10 +1,11 @@
-import React from 'react'
-import GoogleLoginButton from './Google-login-button';
-import Input from './Input';
+import React from "react";
+import GoogleLoginButton from "./Google-login-button";
+import Input from "./Input";
 
-export default function Step2 () {
+export default function Step2() {
   return (
-    <div className='
+    <div
+      className="
     flex 
     flex-col 
     font-normal 
@@ -17,18 +18,20 @@ export default function Step2 () {
     h-fit
     items-center
     text-start
-     shadow-lg'>
-
-    <span className=' 
+     shadow-lg"
+    >
+      <span
+        className=" 
     font-bold 
-    text-3xl'>
+    text-3xl"
+      >
         Your data info
-    </span>
-        <Input cookieName = 'WorkSheetID' header = 'Worksheet ID'/>
-        <Input cookieName = 'SheetName' header = 'Sheet name'/>
-        <Input cookieName = 'ClientID' header = 'GCP Client ID'/>
-        <Input cookieName = 'APIkey' header = 'GCP API key'/>
-        <GoogleLoginButton/>
+      </span>
+      <Input cookieName="WorkSheetID" header="Worksheet ID" />
+      <Input cookieName="SheetName" header="Sheet name" />
+      <Input cookieName="ClientID" header="GCP Client ID" />
+      <Input cookieName="APIkey" header="GCP API key" />
+      <GoogleLoginButton />
     </div>
-  )
+  );
 }

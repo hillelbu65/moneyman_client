@@ -35,6 +35,8 @@ export default function Categories() {
   });
 
   return (
-    <div className=" col-start-2 col-end-8 flex flex-col">{categories}</div>
+    <div className="col-start-1 col-end-9 flex flex-col sm:col-start-2 sm:col-end-8">
+      {categories}
+    </div>
   );
 }
