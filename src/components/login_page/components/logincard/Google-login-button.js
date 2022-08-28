@@ -17,7 +17,7 @@ export default function GoogleLoginButton() {
   };
 
   return (
-    <div className="">
+    <div>
       <GoogleLogin
         clientId={process.env.REACT_APP_GCP_CLIENT_ID}
         onSuccess={onSuccess}
@@ -26,7 +26,7 @@ export default function GoogleLoginButton() {
         render={(renderProps) => (
           <button
             onClick={renderProps.onClick}
-            className="flex flex-row items-center gap-2 font-bold bg-my_main_contrast bg-opacity-90 text-my_creame p-3 rounded-lg hover:bg-opacity-100"
+            className="flex flex-row items-center gap-2 font-bold bg-my_main_contrast bg-opacity-90 text-my_cream p-3 rounded-lg hover:bg-opacity-100"
           >
             <BsGoogle />
             Log in

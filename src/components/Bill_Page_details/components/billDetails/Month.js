@@ -12,11 +12,11 @@ export default function Month(props) {
   return (
     <div className="flex flex-col p-2 justify-center h-fit rounded-md gap-2 ">
       <div className="flex flex-row  items-center">
-        <div className="flex h-12 w-12 bg-my_main_contrast text-my_creame rounded-md p-2 justify-center items-center font-semibold">
+        <div className="flex h-12 w-12 bg-my_main_contrast text-my_cream rounded-md p-2 justify-center items-center font-semibold">
           {monthName}
         </div>
         {monthContext === props.monthName[0] + props.monthName[1] ? (
-          <div className="flex ml-2 h-8 w-fit bg-opacity-80 bg-my_creame text-my_main_contrast rounded-md p-2 justify-center items-center">
+          <div className="flex ml-2 h-8 w-fit bg-opacity-80 bg-my_cream text-my_main_contrast rounded-md p-2 justify-center items-center">
             This month
           </div>
         ) : (

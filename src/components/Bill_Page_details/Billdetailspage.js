@@ -59,7 +59,7 @@ export default function Billdetailspage() {
                 justify-center 
                 items-center 
                 text-my_main_contrast
-                bg-my_creame 
+                bg-my_cream 
                 rounded-lg 
                 text-2xl 
                 hover:text-3xl 
@@ -67,7 +67,7 @@ export default function Billdetailspage() {
           >
             <MdOutlineClear />
           </div>
-          <div className=" flex flex-rows items-center absolute top-8 left-20 text-lg sm:text-xl font-bold text-my_creame">
+          <div className=" flex flex-rows items-center absolute top-8 left-20 text-lg sm:text-xl font-bold text-my_cream">
             {" "}
             {yearContext}
             <span className=" text-my_main_contrast mt-1">

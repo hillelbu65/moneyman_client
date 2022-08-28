@@ -52,7 +52,7 @@ export default function PersonalSpacePage() {
                 justify-center 
                 items-center 
                 text-my_main_contrast
-                bg-my_creame 
+                bg-my_cream 
                 rounded-lg 
                 text-2xl 
                 hover:text-3xl 

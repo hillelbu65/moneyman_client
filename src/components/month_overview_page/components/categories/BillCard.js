@@ -45,7 +45,7 @@ export default function BillCard(props) {
         rounded-t-none 
         place-content-center
        text-my_main_contrast
-       bg-my_creame
+       bg-my_cream
         group-hover:bg-opacity-80
         font-medium
         shadow-lg"

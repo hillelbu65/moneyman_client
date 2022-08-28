@@ -1,19 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from 'react-router-dom'
-import { BalanceProvider } from './components/context/BalanceContext';
-import { MonthStateProvider } from './components/context/monthContext';
-import YearStateProvider from './components/context/yearContext';
-import { MonthDataProvider } from './components/context/monthData';
-import { SheetDataProvider } from './components/context/sheetData';
-import { PersonalSpaceProvider } from './components/context/PersonalSpace';
-import { CurrencyProvider } from './components/context/CurrencyContext';
-import { BillDetailsProvider } from './components/context/BillDetailsContext';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { BalanceProvider } from "./components/context/BalanceContext";
+import { MonthStateProvider } from "./components/context/monthContext";
+import YearStateProvider from "./components/context/yearContext";
+import { MonthDataProvider } from "./components/context/monthData";
+import { SheetDataProvider } from "./components/context/sheetData";
+import { PersonalSpaceProvider } from "./components/context/PersonalSpace";
+import { CurrencyProvider } from "./components/context/CurrencyContext";
+import { BillDetailsProvider } from "./components/context/BillDetailsContext";
+import { SetupProvider } from "./components/context/SetupContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BalanceProvider>
     <MonthStateProvider>
@@ -24,9 +25,9 @@ root.render(
               <BrowserRouter>
                 <CurrencyProvider>
                   <BillDetailsProvider>
-
-                    <App />
-
+                    <SetupProvider>
+                      <App />
+                    </SetupProvider>
                   </BillDetailsProvider>
                 </CurrencyProvider>
               </BrowserRouter>

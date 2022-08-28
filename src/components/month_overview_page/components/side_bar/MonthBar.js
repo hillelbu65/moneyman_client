@@ -29,11 +29,11 @@ export default function MonthBar() {
             setClicked(el[0] + el[1]);
           }}
           className={`${
-            Clicked === el[0] + el[1] ? "bg-my_main_contrast" : "bg-my_creame"
+            Clicked === el[0] + el[1] ? "bg-my_main_contrast" : "bg-my_cream"
           }
           ${
             Clicked === el[0] + el[1]
-              ? "text-my_creame"
+              ? "text-my_cream"
               : "text-my_main_contrast"
           }
           flex 
@@ -43,7 +43,8 @@ export default function MonthBar() {
           justify-center 
           hover:bg-opacity-80 
           rounded-xl  
-          font-bold m-2 
+          font-bold 
+          m-2 
           hover:font-bold`}
           key={index}
         >
@@ -56,26 +57,30 @@ export default function MonthBar() {
   return (
     <div
       className="
-    group 
-    flex 
-    fixed 
-    items-center
-    bottom-3
-     self-center
-     justify-self-center
-    w-5/6
-    h-22  
-    bg-my_main 
-    overflow-auto
-    shadow-2xl
-    sm:top-16
-    sm:w-fit
-    sm:right-16
-    sm:flex-col
-    sm:h-4/5
-    sm:overflow-y-auto
-    rounded-lg
-    "
+      group 
+      flex 
+      fixed 
+      items-center
+      bottom-0
+      self-center
+      justify-self-center
+      w-full
+      h-22 
+      bg-my_hover_main
+      overflow-auto
+      snap-center
+      snap-x
+      shadow-2xl
+      sm:top-16
+      sm:w-fit
+      sm:right-16
+      sm:flex-col
+      sm:h-4/5
+      sm:overflow-y-auto
+      sm:rounded-lg
+      rounded-t-md
+      sm:p-0
+      p-2"
     >
       {selections}
     </div>

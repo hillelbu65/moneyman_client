@@ -25,6 +25,11 @@ export default function MonthOverviewPage() {
       <MonthBar />
       <ChartMonth />
       <Categories />
+
+      {/* Space Holder */}
+      <div className=" h-24 w-ful col-start-1 col-end-9"></div>
+      {/* Space Holder */}
+
       {personalSpaceContext ? <PersonalSpacePage /> : ""}
       {billDetailsOn ? <Billdetailspage /> : ""}
     </div>

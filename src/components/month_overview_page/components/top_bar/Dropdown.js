@@ -7,6 +7,7 @@ import { getMonth } from "../../../data_management/pullData";
 
 export default function Dropdown(props) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [touch, setTouch] = useState(false);
   const [dropdownValue, setDropdownValue] = useState(
     new Date().getFullYear().toString()
   );
@@ -53,21 +54,20 @@ export default function Dropdown(props) {
           setYearContext(year);
           setDropdownOpen(false);
         }}
-        className="
+        className={`
             flex 
-            bg-my_creame 
+            bg-my_cream 
             hover:bg-my_main_contrast 
             text-my_main_contrast 
             hover:text-my_text_color 
             w-20 
             h-14 
-            stext-my_main001021 
             font-medium 
             hover:font-bold 
             rounded-xl
             justify-center 
             items-center 
-            hover:opacity-80"
+            hover:opacity-80`}
       >
         {year}
       </div>
@@ -75,7 +75,7 @@ export default function Dropdown(props) {
   });
 
   return (
-    <div className=" flex flex-col h-fit w-fit text-my_main001021">
+    <div className=" flex flex-col h-fit w-fit">
       <div
         onClick={() => setDropdownOpen(!dropdownOpen)}
         id="dropDown"

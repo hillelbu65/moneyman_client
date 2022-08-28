@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { PersonalSpaceContext } from "../../../context/PersonalSpace";
 import { MdPerson } from "react-icons/md";
 import Dropdown from "./Dropdown";
+import GoogleLogoutButton from "./GoogleLogoutButton";
 
 export default function NavBarAndTools(props) {
   const [personalSpaceContext, setPersonalSpaceContext] =
@@ -19,6 +20,7 @@ export default function NavBarAndTools(props) {
       >
         {<MdPerson size={"25px"} color={"#fffaff"} />}
       </div>
+      <GoogleLogoutButton />
     </div>
   );
 }
