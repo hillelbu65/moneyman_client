@@ -12,4 +12,4 @@ why?
 • 😍 Beautiful UI.
 
 ### Web setup 
-#### 1. 
+#### 1. WIP
